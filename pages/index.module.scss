@@ -1,0 +1,71 @@
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  justify-content: center;
+  align-items: end;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.car-card {
+  font-weight: 400;
+  //   line-height: 1.5;
+  color: #212529;
+  margin-top: 1.5rem;
+  text-align: center;
+
+  .title {
+    color: #000;
+    font-size: 1.2rem;
+  }
+  .image {
+    height: 10rem;
+    width: 10rem;
+    // width: 100%;
+    object-fit: cover;
+  }
+
+  .btn {
+    font-size: 13px;
+    color: #fff;
+    background: #0879c9;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 13px;
+    outline: none;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.45);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.5s all;
+
+    &:hover {
+      background: black;
+      color: #fff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// width: 100%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     display: inline-block;
