@@ -1,0 +1,26 @@
+.header-wrapper {
+  width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-size: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  //   margin-right: -15px;
+  //   margin-left: -15px;
+  //   padding-top: 0.5rem !important;
+  //   padding-bottom: 0.5rem !important;
+  background: #0879c9;
+  color: white;
+
+  ul {
+    display: flex;
+  }
+}
