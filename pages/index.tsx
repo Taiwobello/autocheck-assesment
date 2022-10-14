@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import styles from "./index.module.scss";
 
 import React, { useEffect, useState } from "react";
-import { getAllCars, getCar } from "../utils/helpers/data/car";
+import { getAllCars } from "../utils/helpers/data/car";
 import { Car } from "../utils/helpers/types/Car";
 import Link from "next/link";
 
@@ -329,7 +329,7 @@ interface CarCardProps {
 const CarCard = (props: CarCardProps) => {
   const { title, price, imageUrl, oldPrice, id } = props.car;
   return (
-    <Link href={`/car/${id}`}>
+    <Link href={`/car?carId=${id}`}>
       <a className={styles["car-card"]}>
         <img className={styles.image} src={imageUrl} alt="car" />
         <p className={styles.title}>{title}</p>

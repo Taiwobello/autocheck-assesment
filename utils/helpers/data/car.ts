@@ -68,7 +68,7 @@ const adaptCarDetailsRecord = (record: any, fromBackend?: boolean) => {
   return adaptedRecord;
 };
 
-export const getCar: (id: string) => Promise<RequestResponse<Car>> = async id => {
+export const getCarDetails: (id: string) => Promise<RequestResponse<CarDetails>> = async id => {
   try {
     const response = await restAPIInstance.get(`/inventory/car/${id}`);
     return {
