@@ -2,8 +2,9 @@ import type { NextPage } from "next";
 import styles from "./index.module.scss";
 
 import React, { useEffect, useState } from "react";
-import { getAllCars } from "../utils/helpers/data/car";
+import { getAllCars, getCar } from "../utils/helpers/data/car";
 import { Car } from "../utils/helpers/types/Car";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
   const fetchAllCars = async () => {
     setLoading(true);
     const response = await getAllCars();
-    console.log(response);
+
     if (response.error) {
       console.log(response.error);
     } else {
@@ -25,7 +26,6 @@ const Home: NextPage = () => {
     fetchAllCars();
   }, []);
 
-  console.log(cars);
   return (
     <main>
       <Hero />
@@ -39,17 +39,14 @@ const Home: NextPage = () => {
           <div className="row">
             <div className="agileinfo-ads-display col-lg-9">
               <div className="wrapper">
-                <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
+                <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4 center">
                   <h3 className="heading-tittle text-center font-italic">Available Cars</h3>
-                  {/* <div className="col-md-4 product-men mt-5">
-                    <div className="men-pro-item simpleCart_shelfItem"> */}
+                  {loading && <img src="images/loader.svg" />}
                   <div className={styles["card-wrapper"]}>
                     {cars?.map(car => (
-                      <CarCard car={car} />
+                      <CarCard car={car} key={car.id} />
                     ))}
                   </div>
-                  {/* </div>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -325,18 +322,24 @@ const Hero = () => {
   );
 };
 
-const CarCard = ({ car }: { car: Car }) => {
-  const { title, price, image, oldPrice } = car;
+interface CarCardProps {
+  car: Car;
+}
+
+const CarCard = (props: CarCardProps) => {
+  const { title, price, imageUrl, oldPrice, id } = props.car;
   return (
-    <div className={styles["car-card"]}>
-      <img className={styles.image} src={image} alt="car" />
-      <p className={styles.title}>{title}</p>
-      <div className="info-product-price my-2">
-        <span className="item_price">${price}</span>
-        <del>${oldPrice}</del>
-      </div>
-      <button className={styles.btn}>Add To Cart</button>
-    </div>
+    <Link href={`/car/${id}`}>
+      <a className={styles["car-card"]}>
+        <img className={styles.image} src={imageUrl} alt="car" />
+        <p className={styles.title}>{title}</p>
+        <div className="info-product-price my-2">
+          <span className="item_price">${price}</span>
+          <del>${oldPrice}</del>
+        </div>
+        <button className={styles.btn}>Add To Cart</button>
+      </a>
+    </Link>
   );
 };
 
