@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from "react";
-import { GetStaticProps, NextPage } from "next";
+import React from "react";
+import { GetStaticProps } from "next";
 import { getAllCars, getCar } from "../../utils/helpers/data/car";
-import { Car, CarDetails } from "../../utils/helpers/types/Car";
+import { CarDetails } from "../../utils/helpers/types/Car";
 import styles from "./car.module.scss";
 
 interface CarPageProps {
