@@ -24,20 +24,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         name="keywords"
         content="Electro Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
       />
-
-      <link href="css/css-bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/css-style.css" rel="stylesheet" type="text/css" media="all" />
-      <link rel="stylesheet" href="css/css-fontawesome-all.css" />
-      <link href="css/css-popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/css-menu.css" rel="stylesheet" type="text/css" media="all" />
-
-      <link
-        href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
-        rel="stylesheet"
-      />
-      <link
-        href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-        rel="stylesheet"></link>
     </Head>
   );
   return (

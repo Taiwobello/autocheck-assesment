@@ -78,8 +78,7 @@ const TopHeader = () => {
           <div className="row header-bot_inner_wthreeinfo_header_mid">
             <div className="col-md-3 logo_agile">
               <h1 className="text-center">
-                <a href="index.html" className="font-weight-bold font-italic">
-                  <img src="images/logo2.png" alt=" " className="img-fluid" />
+                <a href="/" className="font-weight-bold font-italic">
                   Electro Store
                 </a>
               </h1>
